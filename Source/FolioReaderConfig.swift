@@ -18,7 +18,7 @@ import RealmSwift
 /// - horizontal: Section and content scroll on horizontal.
 /// - horizontalWithVerticalContent: Sections scroll horizontal and content scroll on vertical.
 /// - defaultVertical: The default scroll direction, if not overridden; works as .vertical.
-public enum FolioReaderScrollDirection: Int {
+@objc public enum FolioReaderScrollDirection: Int {
     case vertical
     case horizontal
     case horizontalWithVerticalContent
@@ -44,7 +44,7 @@ public enum FolioReaderScrollDirection: Int {
 
  Eg. A ClassBasedOnClickListener with the className `quote` and parameterName `id` with the given epub html content `<section class="quote" id="12345">` would call the given closure on a click on this section with the String `12345` as parameter.
  */
-public struct ClassBasedOnClickListener {
+@objc public struct ClassBasedOnClickListener {
 
     /// The name of the URL scheme which should be used. Note: Make sure that the given `String` is a valid as scheme name.
     public var schemeName: String
@@ -84,7 +84,7 @@ public struct ClassBasedOnClickListener {
 /**
  Defines the Reader custom configuration
  */
-open class FolioReaderConfig: NSObject {
+@objc open class FolioReaderConfig: NSObject {
 
     // MARK: ClassBasedOnClickListener
 
@@ -98,57 +98,57 @@ open class FolioReaderConfig: NSObject {
     // MARK: Colors
 
     /// Base header custom TintColor
-    open var tintColor = UIColor(rgba: "#6ACC50")
+    @objc open var tintColor = UIColor(rgba: "#6ACC50")
 
     /// Menu background color
-    open var menuBackgroundColor = UIColor.white
+    @objc open var menuBackgroundColor = UIColor.white
 
     /// Menu separator Color
-    open var menuSeparatorColor = UIColor(rgba: "#D7D7D7")
+    @objc open var menuSeparatorColor = UIColor(rgba: "#D7D7D7")
 
     /// Menu text color
-    open var menuTextColor = UIColor(rgba: "#767676")
+    @objc open var menuTextColor = UIColor(rgba: "#767676")
 
     /// Night mode background color
-    open var nightModeBackground = UIColor(rgba: "#131313")
+    @objc open var nightModeBackground = UIColor(rgba: "#131313")
 
     /// Night mode menu background color
-    open var nightModeMenuBackground = UIColor(rgba: "#1E1E1E")
+    @objc open var nightModeMenuBackground = UIColor(rgba: "#1E1E1E")
 
     /// Night mode separator color
-    open var nightModeSeparatorColor = UIColor(white: 0.5, alpha: 0.2)
+    @objc open var nightModeSeparatorColor = UIColor(white: 0.5, alpha: 0.2)
 
     /// Media overlay or TTS selection color
-    open lazy var mediaOverlayColor: UIColor! = self.tintColor
+    @objc open lazy var mediaOverlayColor: UIColor! = self.tintColor
 
     // MARK: Custom actions
 
     /// hide the navigation bar and the bottom status view
-    open var hideBars = false
+    @objc open var hideBars = false
 
     /// If `canChangeScrollDirection` is `true` it will be overrided by user's option.
-    open var scrollDirection: FolioReaderScrollDirection = .defaultVertical
+    @objc open var scrollDirection: FolioReaderScrollDirection = .defaultVertical
 
     /// Enable or disable hability to user change scroll direction on menu.
-    open var canChangeScrollDirection = true
+    @objc open var canChangeScrollDirection = true
 
     /// Should hide navigation bar on user tap
-    open var shouldHideNavigationOnTap = true
+    @objc open var shouldHideNavigationOnTap = true
 
     /// Allow sharing option, if `false` will hide all sharing icons and options
-    open var allowSharing = true
+    @objc open var allowSharing = true
 
     /// Enable TTS (Text To Speech)
-    open var enableTTS = true
+    @objc open var enableTTS = true
     
     /// Display book title in navbar
-    open var displayTitle = false
+    @objc open var displayTitle = false
 
     /// Hide the page indicator
-    open var hidePageIndicator = false
+    @objc open var hidePageIndicator = false
 
     /// Go to saved position when open a book
-    open var loadSavedPositionForCurrentBook = true
+    @objc open var loadSavedPositionForCurrentBook = true
     
     // MARK: Quote image share
 
@@ -175,10 +175,10 @@ open class FolioReaderConfig: NSObject {
     open var localizedContentsTitle     = NSLocalizedString("Contents", comment: "")
 
     /// Use the readers `UIMenuController` which enables the highlighting etc. The default is `true`. If set to false it's possible to modify the shared `UIMenuController` for yourself. Note: This doesn't disable the text selection in the web view.
-    open var useReaderMenuController    = true
+    @objc open var useReaderMenuController    = true
 
     /// Used to distinguish between multiple or different reader instances. The content of the user defaults (font settings etc.) depends on this identifier. The default is `nil`.
-    open var identifier: String?
+    @objc open var identifier: String?
 
     /// Localizes Highlight date format. This is a `dateFormat` from `NSDateFormatter`, so be careful 🤔
     open var localizedHighlightsDateFormat = "MMM dd, YYYY | HH:mm"
